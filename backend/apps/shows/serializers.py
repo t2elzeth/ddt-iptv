@@ -15,4 +15,4 @@ class ShowSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Show
-        fields = ['id', 'title', 'rating', 'actors', 'preview', 'genre', 'type']
+        fields = ['id', 'title', 'rating', 'actors', 'preview', 'video', 'genre', 'type']
