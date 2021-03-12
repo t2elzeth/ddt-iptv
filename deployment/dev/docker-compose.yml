@@ -6,8 +6,8 @@ services:
     volumes:
       - ../../backend:/app/
     environment:
-      DJANGO_ADMIN_USERNAME: ulukmanatageldiuulu@gmail.com
-      DJANGO_ADMIN_PASSWORD: sssss5s
+      DJANGO_ADMIN_USERNAME: t2elzeth@gmail.com
+      DJANGO_ADMIN_PASSWORD: admin12345
   nginx:
     build: ./nginx
     volumes:
