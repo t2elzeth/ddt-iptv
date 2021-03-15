@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'multiselectfield',
     'drf_yasg',
     'corsheaders',
+    'django_filters',
 
     # own
     'accounts',
