@@ -4,7 +4,7 @@ from multiselectfield import MultiSelectField
 
 class Actor(models.Model):
     full_name = models.CharField(max_length=255)
-    photo = models.ImageField(blank=True, null=True, upload_to='actors/photos/')
+    photo = models.ImageField(upload_to='actors/photos/')
 
     def __str__(self):
         return self.full_name
@@ -18,11 +18,10 @@ class Show(models.Model):
     type_choices = (('film', 'Film'),
                     ('tv', 'TV Show'))
     type = models.CharField(max_length=255, choices=type_choices)
-    preview = models.ImageField(blank=True, null=True, upload_to='shows/previews/')
-    video = models.FileField(upload_to='shows/films/', blank=True, null=True)
+    preview = models.ImageField(upload_to='shows/previews/')
+    video = models.FileField(upload_to='shows/films/')
 
-    # TODO: Remove defaults
-    description = models.TextField(default="")
+    description = models.TextField()
 
     genre_choices = (('action', 'action'),
                      ('comedy', 'comedy'),
@@ -33,7 +32,7 @@ class Show(models.Model):
                      ('romance', 'romance'),
                      ('thriller', 'thriller'),
                      ('western', 'western'))
-    genre = MultiSelectField(choices=genre_choices, default="")
+    genre = MultiSelectField(choices=genre_choices)
 
     def __str__(self):
         return f"{self.type.upper()}: «{self.title}»"
